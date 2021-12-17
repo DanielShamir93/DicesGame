@@ -28,27 +28,42 @@ export default class GameBoard extends React.Component {
         });
     }
 
+    setWinScore = (winScoreElement) => {
+        if (this.isNaturalNumber(winScoreElement.value)) {
+            this.setState({winScore: winScoreElement.value});
+        } else {
+            winScoreElement.value = parseInt(winScoreElement.value) || '';
+        }
+    }
+
+    isNaturalNumber = (string) => {
+        return /^\d+$(?![^\d])/.test(string);
+    }
+
     render = () => {
         return (
             <div className="game-board" >
                 <Player 
+                    playerId={0}
                     playerTurnId={this.state.playerTurnId}
                     currentScore={this.state.currentScore}
-                    playerId={0}
                     isHold={this.state.isHold}
                     nextPlayer={this.nextPlayer}
+                    winScore={this.state.winScore}
                 />
                 <GameTools 
                     dices={this.state.dices}
                     updateCurrentScore={this.updateCurrentScore}
                     playerHold={this.playerHold}
+                    setWinScore={this.setWinScore}
                 />
                 <Player
+                    playerId={1}
                     playerTurnId={this.state.playerTurnId}
                     currentScore={this.state.currentScore}
-                    playerId={1}
                     isHold={this.state.isHold}
                     nextPlayer={this.nextPlayer}
+                    winScore={this.state.winScore}
                 />
             </div>
         );

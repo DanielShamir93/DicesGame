@@ -17,14 +17,28 @@ export default class Player extends React.Component {
                 // Current-score prop changed
                 this.setState({ currentScore: this.props.currentScore });
             } 
-            if (prevProps.isHold !== this.props.isHold && this.props.isHold === true) {
-                this.setState({ 
-                    totalScore: this.state.totalScore + this.state.currentScore ,
-                    currentScore: 0
-                });
-                this.props.nextPlayer();
+            if (prevProps.isHold !== this.props.isHold) {
+                // isHold prop changed
+                if (this.props.isHold) {
+                    // This player pressed hold
+                    const currentTotalScore = this.state.totalScore + this.state.currentScore;
+                    this.setState({ 
+                        totalScore: currentTotalScore,
+                        currentScore: 0
+                    });
+                    
+                    if (this.isPlayerWon(currentTotalScore)) {
+                        console.log(currentTotalScore)
+                    } else {
+                        this.props.nextPlayer();
+                    }
+                }
             }
         }
+    }
+
+    isPlayerWon = (currentTotalScore) => {
+        return currentTotalScore >= this.props.winScore;
     }
 
 

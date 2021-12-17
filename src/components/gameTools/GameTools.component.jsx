@@ -6,8 +6,9 @@ import { GiRollingDiceCup } from "react-icons/gi";
 import { BsHourglassTop } from "react-icons/bs";
 export default class GameTools extends React.Component {
 
-    state = {dices: [null, null]}
-
+    state = {
+        dices: [null, null],
+    }
 
     rollDices = () => {
         const firstDiceResult = this.getRandomDiceNumber();
@@ -20,6 +21,8 @@ export default class GameTools extends React.Component {
     getRandomDiceNumber = () => {
         return Math.floor(Math.random() * 6) + 1;
     }
+
+
 
     render = () => {
         return (
@@ -44,8 +47,13 @@ export default class GameTools extends React.Component {
                         reactIconComponent={<BsHourglassTop className="react-icon"/>} 
                         onClick={this.props.playerHold}
                     />
-
-                    <input className="final-score" placeholder="Win Score" />
+                    <input 
+                        className="final-score" 
+                        placeholder="Win Score" 
+                        onChange={(e) => {
+                            this.props.setWinScore(e.target);
+                        }}
+                    />
                 </div>
             </div>
         );
