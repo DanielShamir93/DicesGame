@@ -1,10 +1,11 @@
 import React from 'react';
+import GameTools from '../gameTools/GameTools.component';
 
 export default class GameBoard extends React.Component {
 
     render = () => {
         return (
-            <h1>hello</h1>
+            <GameTools />
         );
     }
 

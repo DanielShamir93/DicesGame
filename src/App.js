@@ -1,4 +1,5 @@
-import GameBoard from './components/GameBoard.component';
+import GameBoard from './components/gameBoard/GameBoard.component';
+import './styles/app.scss';
 
 function App() {
   return (
