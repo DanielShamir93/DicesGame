@@ -6,55 +6,51 @@ import Player from '../player/Player.component';
 export default class GameBoard extends React.Component {
 
     state = {
-        dices: [null, null],
+        winScore: null,
         playerTurnId: 0,
-        playersScores: [
-            {id: 0, currentScore: 0, totalScore: 0},
-            {id: 1, currentScore: 0, totalScore: 0}
-        ]
+        currentScore: 0,
+        isHold: false
     }
 
-    rollDices = () => {
-        const firstDiceNumber = this.getRandomDiceNumber();
-        const secondDiceNumber = this.getRandomDiceNumber();
-        const dicesSum = firstDiceNumber + secondDiceNumber;
-
-        console.log(this.state.playersScores)
-        
-        this.setState((prevState) => {
-            const currentPlayersScores = prevState.playersScores;
-            currentPlayersScores[this.state.playerTurnId].currentScore += dicesSum;
-            return { playersScores: currentPlayersScores }
-        })
-
-        
+    updateCurrentScore = (dicesResultsSum) => {
+        this.setState({currentScore: this.state.currentScore + dicesResultsSum});
     }
 
-    getRandomDiceNumber = () => {
-        return Math.floor(Math.random() * 6) + 1;
+    playerHold = () => {
+        this.setState({isHold: true});
     }
 
-    // updatePlayerCurrentScore = () => {
-    //     this.stateStatus
-    // }
+    nextPlayer = () => {
+        this.setState({
+            isHold: false,
+            currentScore: 0,
+            playerTurnId: (this.state.playerTurnId + 1) % 2
+        });
+    }
 
     render = () => {
         return (
             <div className="game-board" >
                 <Player 
-                    playerScores={this.state.playersScores[0]}
                     playerTurnId={this.state.playerTurnId}
+                    currentScore={this.state.currentScore}
+                    playerId={0}
+                    isHold={this.state.isHold}
+                    nextPlayer={this.nextPlayer}
                 />
                 <GameTools 
                     dices={this.state.dices}
-                    rollDices={this.rollDices}
+                    updateCurrentScore={this.updateCurrentScore}
+                    playerHold={this.playerHold}
                 />
                 <Player
-                    playerScores={this.state.playersScores[1]}
                     playerTurnId={this.state.playerTurnId}
+                    currentScore={this.state.currentScore}
+                    playerId={1}
+                    isHold={this.state.isHold}
+                    nextPlayer={this.nextPlayer}
                 />
             </div>
-            
         );
     }
 
