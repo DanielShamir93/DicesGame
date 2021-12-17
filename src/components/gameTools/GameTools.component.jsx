@@ -1,5 +1,7 @@
 import React from 'react';
 import './gameTools.styles.scss';
+import IconedButton from '../iconedButton/IconedButton.component';
+import { AiOutlinePlusCircle } from "react-icons/ai";
 
 export default class GameTools extends React.Component {
 
@@ -14,7 +16,7 @@ export default class GameTools extends React.Component {
         return (
             <div className="game-tools" >
                 <div className="game-tools-top" >
-                    <button className="new-game-title" >New Game</button>
+                    <IconedButton className="new-game-title" term="New Game" reactIconComponent={<AiOutlinePlusCircle />} />
                 </div>
                 <div className="dices" >
                     <figure className="dice" >2</figure>

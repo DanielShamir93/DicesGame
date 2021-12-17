@@ -1,0 +1,25 @@
+.player {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30vw;
+
+    &-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 30vh;
+    }
+
+    &-bottom {
+        border: 1px solid black;
+        
+        .current-score {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

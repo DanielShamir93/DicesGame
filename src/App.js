@@ -1,5 +1,6 @@
 import GameBoard from './components/gameBoard/GameBoard.component';
-import './styles/app.scss';
+import './styles/reset.scss'
+import './styles/normalize.css';
 
 function App() {
   return (
