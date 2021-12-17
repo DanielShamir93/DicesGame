@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-12-17T00:26:47.717Z" agent="5.0 (X11)" etag="sqcNUfwja9VB6I-VKKfT" version="15.9.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-12-17T00:33:44.590Z" agent="5.0 (X11)" etag="5KoTtEn5uDAZDHyyQPem" version="15.9.6" type="github">
   <diagram id="LLFjFS0imtfJhxgkr9Xb" name="Page-1">
-    <mxGraphModel dx="4185" dy="3033" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3631" dy="2726" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -22,7 +22,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="cvQm_BtGMacaFVqX-ueh-249" value="props" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=22;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;glass=0;sketch=0;strokeColor=#996185;fillColor=#e6d0de;direction=east;gradientColor=#d5739d;" vertex="1" parent="1">
-          <mxGeometry x="-486" y="-955" width="178" height="47" as="geometry">
+          <mxGeometry x="-527" y="-942" width="178" height="47" as="geometry">
             <mxRectangle x="-370" y="-1080" width="46" height="22" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -30,7 +30,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="cvQm_BtGMacaFVqX-ueh-261" value="props" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=22;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;glass=0;sketch=0;strokeColor=#d79b00;fillColor=#ffcd28;direction=east;gradientColor=#ffa500;" vertex="1" parent="1">
-          <mxGeometry x="-1471" y="-960" width="178" height="72" as="geometry">
+          <mxGeometry x="-1440" y="-942" width="178" height="72" as="geometry">
             <mxRectangle x="-370" y="-1080" width="46" height="22" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -96,7 +96,7 @@
           <mxGeometry y="90" width="408" height="30" as="geometry" />
         </mxCell>
         <mxCell id="cvQm_BtGMacaFVqX-ueh-323" value="&lt;Player /&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;glass=0;sketch=0;strokeColor=#d79b00;fillColor=#ffcd28;fontSize=25;gradientColor=#ffa500;" vertex="1" parent="1">
-          <mxGeometry x="-1415" y="-691" width="408" height="510" as="geometry">
+          <mxGeometry x="-1440" y="-745" width="408" height="510" as="geometry">
             <mxRectangle x="-1085" y="-1375" width="286" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -163,7 +163,7 @@
           <mxGeometry y="60" width="408" height="30" as="geometry" />
         </mxCell>
         <mxCell id="cvQm_BtGMacaFVqX-ueh-360" value="&lt;GameTools /&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;glass=0;sketch=0;strokeColor=#996185;fillColor=#e6d0de;fontSize=25;gradientColor=#d5739d;" vertex="1" parent="1">
-          <mxGeometry x="-762" y="-691" width="408" height="480" as="geometry">
+          <mxGeometry x="-757" y="-745" width="408" height="480" as="geometry">
             <mxRectangle x="-1085" y="-1375" width="286" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
