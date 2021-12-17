@@ -11,6 +11,17 @@
         justify-content: space-around;
         align-items: center;
         height: 30vh;
+
+        &-title {
+
+            .player-name {
+                padding-right: 10px;
+            }
+
+            .react-icon {
+                color: red;
+            }
+        }
     }
 
     &-bottom {

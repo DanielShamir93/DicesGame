@@ -1,5 +1,6 @@
 import React from 'react';
 import './player.styles.scss';
+import { GiRollingDiceCup } from "react-icons/gi";
 
 export default class Player extends React.Component {
 
@@ -19,8 +20,9 @@ export default class Player extends React.Component {
         return (
             <div className="player" >
                 <div className="player-top" >
-                    <p className="player-title" >PLAYER
-                        {this.state.isActive  && <span className="player-turn" > *</span>}
+                    <p className="player-top-title" >
+                        <span className="player-name">PLAYER</span>    
+                        {this.state.isActive  && <GiRollingDiceCup className="react-icon" />}
                     </p>
                     <p className="total-score" >0</p>
                 </div>

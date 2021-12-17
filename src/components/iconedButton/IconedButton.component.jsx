@@ -1,5 +1,6 @@
 import React from 'react';
 import { GrDocumentMissing } from "react-icons/gr";
+import './iconedButton.styles.scss'
 
 export default class IconedButton extends React.Component {
 
@@ -11,7 +12,7 @@ export default class IconedButton extends React.Component {
     render = () => {
         return (
             <button className="iconed-button" >
-                {this.state.reactIconComponent !== '' ? this.props.reactIconComponent : <GrDocumentMissing />}
+                {this.state.reactIconComponent !== '' ? this.props.reactIconComponent : <GrDocumentMissing className="react-icon"/>}
                 <span className="button-term">{this.state.term}</span>
             </button>
         );
