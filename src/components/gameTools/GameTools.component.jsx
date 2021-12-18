@@ -15,7 +15,17 @@ export default class GameTools extends React.Component {
         const secondDiceResult = this.getRandomDiceNumber();
         
         this.setState({dices: [firstDiceResult, secondDiceResult]});
-        this.props.updateCurrentScore(firstDiceResult + secondDiceResult)
+
+        if (this.isDouble()) {
+            this.props.emptyPlayer();
+        } else {
+            this.props.updateCurrentScore(firstDiceResult + secondDiceResult)
+        }
+    }
+
+    isDouble = () => {
+        return  this.state.dices[0] !== null && 
+                this.state.dices[0] === this.state.dices[1];
     }
 
     getRandomDiceNumber = () => {
@@ -56,11 +66,14 @@ export default class GameTools extends React.Component {
                             className="hold" 
                             term="Hold" 
                             reactIconComponent={<BsHourglassTop className="react-icon"/>} 
-                            onClick={this.props.playerHold}
+                            onClick={() => {
+                                this.setState({dices: [null, null]});
+                                this.props.playerHold();
+                            }}
                         />
                     }
                     <input 
-                        className="final-score" 
+                        className="win-score" 
                         placeholder="Win Score" 
                         onChange={(e) => {
                             this.props.setWinScore(e.target);

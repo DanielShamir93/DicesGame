@@ -5,7 +5,20 @@
     justify-content: space-around;
 
     &-bottom {
+        height: 30vh;
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
+
+        .win-score {
+            width: 20vw;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.5);
+            outline: none;
+            border-radius: 2vmin;
+            border: none;
+            box-shadow: 0 0 5vmin black;
+            font-size: 5vmin;
+        }
     }
 }

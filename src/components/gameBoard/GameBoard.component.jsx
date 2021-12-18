@@ -10,7 +10,8 @@ export default class GameBoard extends React.Component {
         playerTurnId: 0,
         currentScore: 0,
         isHold: false,
-        isNewGame: false
+        isNewGame: false,
+        isDouble: false
     }
 
     updateCurrentScore = (dicesResultsSum) => {
@@ -25,8 +26,13 @@ export default class GameBoard extends React.Component {
         this.setState({
             isHold: false,
             currentScore: 0,
+            isDouble: false,
             playerTurnId: (this.state.playerTurnId + 1) % 2
         });
+    }
+
+    emptyPlayer = () => {
+        this.setState({isDouble: true});
     }
 
     setWinScore = (winScoreElement) => {
@@ -64,6 +70,7 @@ export default class GameBoard extends React.Component {
                 isHold={this.state.isHold}
                 winScore={this.state.winScore}
                 isNewGame={this.state.isNewGame}
+                isDouble={this.state.isDouble}
                 setNewGame={this.setNewGame}
                 nextPlayer={this.nextPlayer}
             />
@@ -73,11 +80,13 @@ export default class GameBoard extends React.Component {
     getGameTools = () => {
         return (
             <GameTools 
+                winScore={this.state.winScore}
                 updateCurrentScore={this.updateCurrentScore}
                 playerHold={this.playerHold}
                 setWinScore={this.setWinScore}
                 resetGame={this.resetGame}
-                winScore={this.state.winScore}
+                nextPlayer={this.nextPlayer}
+                emptyPlayer={this.emptyPlayer}
             />
         );
     }

@@ -23,28 +23,30 @@ export default class Player extends React.Component {
             this.props.setNewGame();
         } else if (this.props.playerTurnId === this.state.id) {
             // It is this player turn
-            if (prevProps.currentScore !== this.props.currentScore) {
+            if (this.props.isDouble) {
+                // Player rolled a double
+                this.setState({
+                    currentScore: 0,
+                    totalScore: 0
+                })
+                this.props.nextPlayer();
+            } else if (this.props.isHold) {
+                // Player pressed hold button
+                const currentTotalScore = this.state.totalScore + this.state.currentScore;
+                this.setState({ 
+                    totalScore: currentTotalScore,
+                    currentScore: 0
+                });
+                
+                if (this.isPlayerWon(currentTotalScore)) {
+                    this.setState({isWinner: true});
+                } else {
+                    this.props.nextPlayer();
+                }
+            } else if (prevProps.currentScore !== this.props.currentScore) {
                 // Current-score prop changed
                 this.setState({ currentScore: this.props.currentScore });
             } 
-            if (prevProps.isHold !== this.props.isHold) {
-                // isHold prop changed
-                if (this.props.isHold) {
-                    // This player pressed hold
-                    const currentTotalScore = this.state.totalScore + this.state.currentScore;
-                    this.setState({ 
-                        totalScore: currentTotalScore,
-                        currentScore: 0
-                    });
-                    
-                    if (this.isPlayerWon(currentTotalScore)) {
-                        this.setState({isWinner: true});
-
-                    } else {
-                        this.props.nextPlayer();
-                    }
-                }
-            }
         }
     }
 
@@ -58,8 +60,10 @@ export default class Player extends React.Component {
                 <div className="player-top" >
                     <p className="player-top-title" >
                         <span className="player-name">PLAYER </span>
-                        <span>{this.state.id + 1}</span>
-                        {this.state.id === this.props.playerTurnId && <GiRollingDices className="react-icon" />}
+                        <span className="player-id">{this.state.id + 1}</span>
+                        <span className="player-turn-icon">
+                            {this.state.id === this.props.playerTurnId && <GiRollingDices className="react-icon" />}
+                        </span>
                     </p>
                     <p className="total-score" >{this.state.totalScore}</p>
                     {this.state.isWinner && <span>WINNER!</span>}
