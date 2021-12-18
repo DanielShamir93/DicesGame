@@ -12,7 +12,7 @@ export default class Player extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        
+
         if (this.props.isNewGame) {
             // Reset players scores
             this.setState({
@@ -39,11 +39,22 @@ export default class Player extends React.Component {
                     
                     if (this.isPlayerWon(currentTotalScore)) {
                         this.setState({isWinner: true});
+                        this.props.resetWinScore();
                     } else {
                         this.props.nextPlayer();
                     }
                 }
             }
+            // It is this player turn
+            if (this.props.isDoubleSix) {
+                // Player rolled a double
+                this.setState({
+                    currentScore: 0,
+                    totalScore: 0
+                })
+                this.props.nextPlayer();
+                return;
+            } 
         }
     }
 

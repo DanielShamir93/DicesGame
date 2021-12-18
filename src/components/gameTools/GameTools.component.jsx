@@ -15,17 +15,16 @@ export default class GameTools extends React.Component {
         const secondDiceResult = this.getRandomDiceNumber();
         
         this.setState({dices: [firstDiceResult, secondDiceResult]});
-
-        if (this.isDouble()) {
+        if (this.isDoubleSix()) {
             this.props.emptyPlayer();
         } else {
             this.props.updateCurrentScore(firstDiceResult + secondDiceResult)
         }
     }
 
-    isDouble = () => {
-        return  this.state.dices[0] !== null && 
-                this.state.dices[0] === this.state.dices[1];
+    isDoubleSix = () => {
+        return  this.state.dices[0] === 6 && 
+                this.state.dices[1] === 6;
     }
 
     getRandomDiceNumber = () => {

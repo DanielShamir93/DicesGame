@@ -11,7 +11,7 @@ export default class GameBoard extends React.Component {
         currentScore: 0,
         isHold: false,
         isNewGame: false,
-        isDouble: false
+        isDoubleSix: false
     }
 
     updateCurrentScore = (dicesResultsSum) => {
@@ -26,13 +26,13 @@ export default class GameBoard extends React.Component {
         this.setState({
             isHold: false,
             currentScore: 0,
-            isDouble: false,
+            isDoubleSix: false,
             playerTurnId: (this.state.playerTurnId + 1) % 2
         });
     }
 
     emptyPlayer = () => {
-        this.setState({isDouble: true});
+        this.setState({isDoubleSix: true});
     }
 
     setWinScore = (winScoreElement) => {
@@ -42,6 +42,10 @@ export default class GameBoard extends React.Component {
             winScoreElement.value = parseInt(winScoreElement.value) || '';
             this.setState({winScore: winScoreElement.value});
         }
+    }
+
+    resetWinScore = () => {
+        this.setState({winScore: null});
     }
 
     isNaturalNumber = (string) => {
@@ -70,9 +74,10 @@ export default class GameBoard extends React.Component {
                 isHold={this.state.isHold}
                 winScore={this.state.winScore}
                 isNewGame={this.state.isNewGame}
-                isDouble={this.state.isDouble}
+                isDoubleSix={this.state.isDoubleSix}
                 setNewGame={this.setNewGame}
                 nextPlayer={this.nextPlayer}
+                resetWinScore={this.resetWinScore}
             />
         );
     }
