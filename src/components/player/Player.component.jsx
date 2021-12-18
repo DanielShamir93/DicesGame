@@ -12,7 +12,16 @@ export default class Player extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.playerTurnId === this.state.id) {
+        
+        if (this.props.isNewGame) {
+            // Reset players scores
+            this.setState({
+                currentScore: this.props.currentScore,
+                totalScore: 0,
+                isWinner: false
+            })
+            this.props.setNewGame();
+        } else if (this.props.playerTurnId === this.state.id) {
             // It is this player turn
             if (prevProps.currentScore !== this.props.currentScore) {
                 // Current-score prop changed
@@ -30,6 +39,7 @@ export default class Player extends React.Component {
                     
                     if (this.isPlayerWon(currentTotalScore)) {
                         this.setState({isWinner: true});
+
                     } else {
                         this.props.nextPlayer();
                     }

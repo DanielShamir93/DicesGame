@@ -28,7 +28,15 @@ export default class GameTools extends React.Component {
         return (
             <div className="game-tools" >
                 <div className="game-tools-top" >
-                    <IconedButton className="new-game-title" term="New Game" reactIconComponent={<AiOutlinePlusCircle className="react-icon"/>} />
+                    <IconedButton 
+                        className="new-game-title" 
+                        term="New Game" 
+                        reactIconComponent={<AiOutlinePlusCircle className="react-icon"/>}
+                        onClick={(e) => {
+                            this.setState({dices: [null, null]});
+                            this.props.resetGame();
+                        }}
+                    />
                 </div>
                 <div className="dices" >
                     <figure className="dice" >{this.state.dices[0]}</figure>

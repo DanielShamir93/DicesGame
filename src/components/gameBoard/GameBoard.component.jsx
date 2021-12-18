@@ -9,7 +9,8 @@ export default class GameBoard extends React.Component {
         winScore: null,
         playerTurnId: 0,
         currentScore: 0,
-        isHold: false
+        isHold: false,
+        isNewGame: false
     }
 
     updateCurrentScore = (dicesResultsSum) => {
@@ -40,6 +41,20 @@ export default class GameBoard extends React.Component {
         return /^\d+$(?![^\d])/.test(string);
     }
 
+    resetGame = () => {
+        this.setState({
+            playerTurnId: 0,
+            currentScore: 0,
+            isHold: false,
+            isNewGame: true
+        })
+    }
+
+    setNewGame = () => {
+        this.setState({isNewGame: false});
+    }
+
+
     render = () => {
         return (
             <div className="game-board" >
@@ -48,25 +63,28 @@ export default class GameBoard extends React.Component {
                     playerTurnId={this.state.playerTurnId}
                     currentScore={this.state.currentScore}
                     isHold={this.state.isHold}
-                    nextPlayer={this.nextPlayer}
                     winScore={this.state.winScore}
+                    isNewGame={this.state.isNewGame}
+                    setNewGame={this.setNewGame}
+                    nextPlayer={this.nextPlayer}
                 />
                 <GameTools 
-                    dices={this.state.dices}
                     updateCurrentScore={this.updateCurrentScore}
                     playerHold={this.playerHold}
                     setWinScore={this.setWinScore}
+                    resetGame={this.resetGame}
                 />
                 <Player
                     playerId={1}
                     playerTurnId={this.state.playerTurnId}
                     currentScore={this.state.currentScore}
                     isHold={this.state.isHold}
-                    nextPlayer={this.nextPlayer}
                     winScore={this.state.winScore}
+                    isNewGame={this.state.isNewGame}
+                    setNewGame={this.setNewGame}
+                    nextPlayer={this.nextPlayer}
                 />
             </div>
         );
     }
-
 }
