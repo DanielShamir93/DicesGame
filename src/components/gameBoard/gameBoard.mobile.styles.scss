@@ -1,0 +1,23 @@
+@media (max-width: 500px) {
+    
+    body {
+        background-image: url(../../assets/images/1993117.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 100vh;
+        
+        .game-board {
+            display: none;
+        }
+    
+        .mobile-media-query {
+            display: block;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+    }
+    
+}

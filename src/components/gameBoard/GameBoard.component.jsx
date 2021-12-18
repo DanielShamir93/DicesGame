@@ -1,8 +1,9 @@
 import React from 'react';
 import './gameBoard.styles.scss';
+import './gameBoard.mobile.styles.scss';
 import GameTools from '../gameTools/GameTools.component';
 import Player from '../player/Player.component';
-import {Howl, Howler} from 'howler';
+import {Howl} from 'howler';
 import ThemeSong from '../../assets/audio/background_sound.mp3';
 
 export default class GameBoard extends React.Component {
@@ -17,15 +18,12 @@ export default class GameBoard extends React.Component {
     }
 
     componentDidMount = () => {
-        this.soundPlay(ThemeSong)
-    }
-
-    soundPlay = (src) => {
-        const sound = new Howl({
-            src
+        new Howl({
+            src: ThemeSong,
+            autoplay: true,
+            loop: true,
+            volume: 0.5,
         });
-        sound.play();
-        Howler.volume(0.5);
     }
 
     updateCurrentScore = (dicesResultsSum) => {
@@ -112,11 +110,15 @@ export default class GameBoard extends React.Component {
 
     render = () => {
         return (
-            <div className="game-board" >
-                {this.getPlayer(0)}
-                {this.getGameTools()}
-                {this.getPlayer(1)}
+            <div>
+                <div className="game-board" >
+                    {this.getPlayer(0)}
+                    {this.getGameTools()}
+                    {this.getPlayer(1)}
+                </div>
+                <h1 className="mobile-media-query">Rotate Mobile</h1>
             </div>
+
         );
     }
 }

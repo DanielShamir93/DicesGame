@@ -78,9 +78,11 @@ export default class Player extends React.Component {
                     <div className="current-score" >
                         <p className="current-score-title" >Current Score</p>
                         <p className="current-score-number" >{this.state.currentScore}</p>
+                        
                     </div>
                 </div>
                 {this.state.id === this.props.playerTurnId && <div className={`player-turn-background play-image-${this.state.id}`}></div>}
+                {this.state.isWinner && <figure className="movie-phrase"></figure>}
             </div>  
         );
     }

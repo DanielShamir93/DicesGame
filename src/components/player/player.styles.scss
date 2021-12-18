@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     width: 30vw;
+    height: 100vh;
     position: relative;
 
     &-top {
@@ -72,7 +73,6 @@
         height: 100%;
     }
 
-
     .play-image-0 {
         background-image: url(../../assets/images/8fd75996f4284f39b57cf452e1753cd7.jpg);
         background-size: 30vmin;
@@ -87,4 +87,16 @@
         background-position: 50% 60%;
     }
 
+    .movie-phrase {
+        width: 25vw;
+        height: 27vh;
+        background-image: url(../../assets/images/the-good-the-bad-and-the-ugly-western.gif);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        z-index: 10;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }

@@ -33,12 +33,12 @@ export default class GameTools extends React.Component {
 
     getDiceReactIcon = (diceResult) => {
         switch(diceResult) {
-            case 1: return <GiPerspectiveDiceSixFacesOne className="react-dice-icon"/>;
-            case 2: return <GiPerspectiveDiceSixFacesTwo className="react-dice-icon"/>;
-            case 3: return <GiPerspectiveDiceSixFacesThree className="react-dice-icon"/>;
-            case 4: return <GiPerspectiveDiceSixFacesFour className="react-dice-icon"/>;
-            case 5: return <GiPerspectiveDiceSixFacesFive className="react-dice-icon"/>;
-            case 6: return <GiPerspectiveDiceSixFacesSix className="react-dice-icon"/>;
+            case 1:     return <GiPerspectiveDiceSixFacesOne className="react-dice-icon"/>;
+            case 2:     return <GiPerspectiveDiceSixFacesTwo className="react-dice-icon"/>;
+            case 3:     return <GiPerspectiveDiceSixFacesThree className="react-dice-icon"/>;
+            case 4:     return <GiPerspectiveDiceSixFacesFour className="react-dice-icon"/>;
+            case 5:     return <GiPerspectiveDiceSixFacesFive className="react-dice-icon"/>;
+            default:    return <GiPerspectiveDiceSixFacesSix className="react-dice-icon"/>;
         }
     }
 
