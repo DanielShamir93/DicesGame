@@ -2,13 +2,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+
+    &-top {
+        padding-top: 5vh;
+    }
 
     &-bottom {
-        height: 30vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 3vh;
+        position: relative;
+        height: 40vh;
+
+        .roll-dice {
+            position: absolute;
+            bottom: 0;
+
+        }
+
+        .hold {
+            position: absolute;
+            margin-bottom: 5vh;
+        }
 
         .win-score {
             width: 20vw;
@@ -17,7 +35,7 @@
             outline: none;
             border-radius: 2vmin;
             border: none;
-            box-shadow: 0 0 5vmin black;
+            box-shadow: 0 0 1vmin rgb(185, 32, 32);
             font-size: 5vmin;
         }
     }

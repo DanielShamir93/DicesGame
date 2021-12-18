@@ -1,14 +1,19 @@
 .iconed-button {
-    background: none;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 1vmin rgb(185, 32, 32);
+    border-radius: 2vmin;
     border: none;
     cursor: pointer;
+    font-size: 5vmin;
+    width: fit-content;
+    padding: 1vmin;
 
     .react-icon {
-        color: red;
+        color: rgb(185, 32, 32);
     }
 
     .button-term {
-        padding-left: 10px;
+        padding-left: 1vmin;
     }
 }
 

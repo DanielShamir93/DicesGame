@@ -51,6 +51,9 @@ export default class GameTools extends React.Component {
                     <figure className="dice" >{this.state.dices[1]}</figure>
                 </div>
                 <div className="game-tools-bottom" >
+                    <div>
+                        
+                    </div>
                     {
                         this.props.winScore && 
                         <IconedButton 

@@ -1,7 +1,7 @@
 .player {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 30vw;
     position: relative;
@@ -12,6 +12,7 @@
         justify-content: space-around;
         align-items: center;
         height: 30vh;
+        padding-top: 10vh;
 
         &-title {
             font-size: 5vmin;
@@ -48,7 +49,7 @@
             align-items: center;
             color: white;
             box-shadow: 0 0 2vh black;
-            border-radius: 10px;
+            border-radius: 5vmin 5vmin 0 0;
             
             p {
                 white-space: nowrap;
@@ -58,9 +59,25 @@
     }
 
     .player-turn-background {
-        background: rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.1);
         position: absolute;
         width: 100%;
         height: 100%;
     }
+
+
+    .play-image-0 {
+        background-image: url(../../assets/images/8fd75996f4284f39b57cf452e1753cd7.jpg);
+        background-size: 30vmin;
+        background-repeat: no-repeat;
+        background-position: 50% 60%;
+    }
+
+    .play-image-1 {
+        background-image: url(../../assets/images/lee-van-cleef-for-a-few-dollars-more-antonios-valamontes.jpg);
+        background-size: 30vmin;
+        background-repeat: no-repeat;
+        background-position: 50% 60%;
+    }
+
 }
