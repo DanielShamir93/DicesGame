@@ -34,6 +34,7 @@ export default class GameBoard extends React.Component {
             this.setState({winScore: winScoreElement.value});
         } else {
             winScoreElement.value = parseInt(winScoreElement.value) || '';
+            this.setState({winScore: winScoreElement.value});
         }
     }
 
@@ -54,36 +55,39 @@ export default class GameBoard extends React.Component {
         this.setState({isNewGame: false});
     }
 
+    getPlayer = (id) => {
+        return (
+            <Player 
+                playerId={id}
+                playerTurnId={this.state.playerTurnId}
+                currentScore={this.state.currentScore}
+                isHold={this.state.isHold}
+                winScore={this.state.winScore}
+                isNewGame={this.state.isNewGame}
+                setNewGame={this.setNewGame}
+                nextPlayer={this.nextPlayer}
+            />
+        );
+    }
+
+    getGameTools = () => {
+        return (
+            <GameTools 
+                updateCurrentScore={this.updateCurrentScore}
+                playerHold={this.playerHold}
+                setWinScore={this.setWinScore}
+                resetGame={this.resetGame}
+                winScore={this.state.winScore}
+            />
+        );
+    }
 
     render = () => {
         return (
             <div className="game-board" >
-                <Player 
-                    playerId={0}
-                    playerTurnId={this.state.playerTurnId}
-                    currentScore={this.state.currentScore}
-                    isHold={this.state.isHold}
-                    winScore={this.state.winScore}
-                    isNewGame={this.state.isNewGame}
-                    setNewGame={this.setNewGame}
-                    nextPlayer={this.nextPlayer}
-                />
-                <GameTools 
-                    updateCurrentScore={this.updateCurrentScore}
-                    playerHold={this.playerHold}
-                    setWinScore={this.setWinScore}
-                    resetGame={this.resetGame}
-                />
-                <Player
-                    playerId={1}
-                    playerTurnId={this.state.playerTurnId}
-                    currentScore={this.state.currentScore}
-                    isHold={this.state.isHold}
-                    winScore={this.state.winScore}
-                    isNewGame={this.state.isNewGame}
-                    setNewGame={this.setNewGame}
-                    nextPlayer={this.nextPlayer}
-                />
+                {this.getPlayer(0)}
+                {this.getGameTools()}
+                {this.getPlayer(1)}
             </div>
         );
     }

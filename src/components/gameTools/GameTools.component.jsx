@@ -22,8 +22,6 @@ export default class GameTools extends React.Component {
         return Math.floor(Math.random() * 6) + 1;
     }
 
-
-
     render = () => {
         return (
             <div className="game-tools" >
@@ -32,7 +30,7 @@ export default class GameTools extends React.Component {
                         className="new-game-title" 
                         term="New Game" 
                         reactIconComponent={<AiOutlinePlusCircle className="react-icon"/>}
-                        onClick={(e) => {
+                        onClick={() => {
                             this.setState({dices: [null, null]});
                             this.props.resetGame();
                         }}
@@ -43,18 +41,24 @@ export default class GameTools extends React.Component {
                     <figure className="dice" >{this.state.dices[1]}</figure>
                 </div>
                 <div className="game-tools-bottom" >
-                    <IconedButton 
-                        className="roll-dice" 
-                        term="Roll Dices" 
-                        reactIconComponent={<GiRollingDiceCup className="react-icon"/>} 
-                        onClick={this.rollDices}
-                    />
-                    <IconedButton 
-                        className="hold" 
-                        term="Hold" 
-                        reactIconComponent={<BsHourglassTop className="react-icon"/>} 
-                        onClick={this.props.playerHold}
-                    />
+                    {
+                        this.props.winScore && 
+                        <IconedButton 
+                            className="roll-dice" 
+                            term="Roll Dices" 
+                            reactIconComponent={<GiRollingDiceCup className="react-icon"/>} 
+                            onClick={this.rollDices}
+                        />
+                    }
+                    {
+                        this.props.winScore &&
+                        <IconedButton 
+                            className="hold" 
+                            term="Hold" 
+                            reactIconComponent={<BsHourglassTop className="react-icon"/>} 
+                            onClick={this.props.playerHold}
+                        />
+                    }
                     <input 
                         className="final-score" 
                         placeholder="Win Score" 

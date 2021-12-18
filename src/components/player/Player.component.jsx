@@ -52,7 +52,6 @@ export default class Player extends React.Component {
         return currentTotalScore >= this.props.winScore;
     }
 
-
     render = () => {
         return (
             <div className="player" >
@@ -71,10 +70,8 @@ export default class Player extends React.Component {
                         <p className="current-score-number" >{this.state.currentScore}</p>
                     </div>
                 </div>
+                {this.state.id === this.props.playerTurnId && <div className="player-turn-background"></div>}
             </div>  
         );
-
-        
     }
-
 }
