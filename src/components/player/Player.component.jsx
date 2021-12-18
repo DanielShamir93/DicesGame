@@ -7,7 +7,8 @@ export default class Player extends React.Component {
     state = {
         id: this.props.playerId, 
         currentScore: this.props.currentScore,
-        totalScore: 0
+        totalScore: 0,
+        isWinner: false
     }
 
     componentDidUpdate(prevProps) {
@@ -28,7 +29,7 @@ export default class Player extends React.Component {
                     });
                     
                     if (this.isPlayerWon(currentTotalScore)) {
-                        console.log(currentTotalScore)
+                        this.setState({isWinner: true});
                     } else {
                         this.props.nextPlayer();
                     }
@@ -52,6 +53,7 @@ export default class Player extends React.Component {
                         {this.state.id === this.props.playerTurnId && <GiRollingDices className="react-icon" />}
                     </p>
                     <p className="total-score" >{this.state.totalScore}</p>
+                    {this.state.isWinner && <span>WINNER!</span>}
                 </div>
                 <div className="player-bottom" >
                     <div className="current-score" >
