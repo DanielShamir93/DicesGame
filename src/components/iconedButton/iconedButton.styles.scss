@@ -17,3 +17,10 @@
     }
 }
 
+.iconed-button:hover {
+    box-shadow: 0 0 3vmin rgb(185, 32, 32);
+}
+
+.iconed-button:active {
+    box-shadow: 0 0 4vmin rgb(185, 32, 32);
+}

@@ -2,6 +2,8 @@ import React from 'react';
 import './gameBoard.styles.scss';
 import GameTools from '../gameTools/GameTools.component';
 import Player from '../player/Player.component';
+import {Howl, Howler} from 'howler';
+import ThemeSong from '../../assets/audio/background_sound.mp3';
 
 export default class GameBoard extends React.Component {
 
@@ -12,6 +14,18 @@ export default class GameBoard extends React.Component {
         isHold: false,
         isNewGame: false,
         isDoubleSix: false
+    }
+
+    componentDidMount = () => {
+        this.soundPlay(ThemeSong)
+    }
+
+    soundPlay = (src) => {
+        const sound = new Howl({
+            src
+        });
+        sound.play();
+        Howler.volume(0.5);
     }
 
     updateCurrentScore = (dicesResultsSum) => {

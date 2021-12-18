@@ -48,5 +48,13 @@
             box-shadow: 0 0 1vmin rgb(185, 32, 32);
             font-size: 5vmin;
         }
+
+        .win-score:hover {
+            box-shadow: 0 0 3vmin rgb(185, 32, 32);
+        }
+        
+        .win-score:active {
+            box-shadow: 0 0 4vmin rgb(185, 32, 32);
+        }
     }
 }
