@@ -22,13 +22,9 @@
                 padding: 0 2vmin;
             }
 
-            .player-turn-icon {
-                position: relative;
-
-                .react-icon {
-                    color: rgb(185, 32, 32);
-                    position: absolute;
-                }
+            .react-icon {
+                color: rgb(185, 32, 32);
+                position: absolute;
             }
             
         }
@@ -36,7 +32,19 @@
         .total-score {
             font-size: 8vmin;
         }
+
+        
     }
+
+    .winner-title {
+        font-size: 8vmin;
+        position: absolute;
+        color: rgb(185, 32, 32);
+        top: 50%;
+        z-index: 1000;
+        text-shadow: 0 0 1vmin black;
+    }
+
 
     &-bottom {
                 

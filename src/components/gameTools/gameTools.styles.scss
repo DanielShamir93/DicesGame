@@ -8,6 +8,16 @@
         padding-top: 5vh;
     }
 
+    .dices {
+        padding-top: 5vh;
+        font-size: 15vmin;
+
+        .react-dice-icon {
+            color: rgb(185, 32, 32);
+            border-radius: 2vh;
+        }
+    }
+
     &-bottom {
         display: flex;
         flex-direction: column;
