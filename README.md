@@ -18,4 +18,4 @@ A competitive dice game between two players where the goal is to reach a sum of 
 
 ## :beers: Recognition 
 
-A great thanks for Appleseeds bootcamp!
+A great thanks to Appleseeds Bootcamp!
