@@ -31,7 +31,7 @@ export default class Player extends React.Component {
                 // isHold prop changed
                 if (this.props.isHold) {
                     // This player pressed hold
-                    const currentTotalScore = this.state.totalScore + this.state.currentScore;
+                    const currentTotalScore = this.state.totalScore + this.props.currentScore;
                     this.setState({ 
                         totalScore: currentTotalScore,
                         currentScore: 0
@@ -77,8 +77,7 @@ export default class Player extends React.Component {
                 <div className="player-bottom" >
                     <div className="current-score" >
                         <p className="current-score-title" >Current Score</p>
-                        <p className="current-score-number" >{this.state.currentScore}</p>
-                        
+                        <p className="current-score-number" >{this.state.id === this.props.playerTurnId ? this.props.currentScore : 0}</p>
                     </div>
                 </div>
                 {this.state.id === this.props.playerTurnId && <div className={`player-turn-background play-image-${this.state.id}`}></div>}

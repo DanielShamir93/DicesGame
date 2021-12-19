@@ -15,6 +15,7 @@ A competitive dice game between two players where the goal is to reach a sum of 
 
 - howler: 2.2.3
 - node-sass: 7.0.0
+- react-icons: 4.3.1
 
 ## :beers: Recognition 
 
