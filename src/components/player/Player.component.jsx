@@ -6,7 +6,6 @@ export default class Player extends React.Component {
 
     state = {
         id: this.props.playerId, 
-        currentScore: this.props.currentScore,
         totalScore: 0,
         isWinner: false
     }
