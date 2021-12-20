@@ -17,6 +17,10 @@ A competitive dice game between two players where the goal is to reach a sum of 
 - node-sass: 7.0.0
 - react-icons: 4.3.1
 
+## :alembic: Preparation Diagram
+
+![](src/assets/images/preparation_diagram.png.png)
+
 ## :beers: Recognition 
 
 A great thanks to Appleseeds Bootcamp!
