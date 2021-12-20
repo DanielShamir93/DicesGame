@@ -19,7 +19,7 @@ A competitive dice game between two players where the goal is to reach a sum of 
 
 ## :alembic: Preparation Diagram
 
-![](src/assets/images/preparation_diagram.png.png)
+![](src/assets/images/preparation_diagram.png)
 
 ## :beers: Recognition 
 
